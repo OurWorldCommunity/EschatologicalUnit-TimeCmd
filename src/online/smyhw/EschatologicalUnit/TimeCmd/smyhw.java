@@ -69,11 +69,6 @@ public class smyhw extends JavaPlugin implements Listener
                 	loger.warning(prefix+"使用者<"+sender.getName()+">试图非法使用指令<"+args+">{权限不足}");
                 	return true;
                 }
-                if(args.length<2) 
-                {
-                	CSBZ(sender);
-                	return true;
-                }
                 switch(args[0])
                 {
                 case "reset":
@@ -88,6 +83,11 @@ public class smyhw extends JavaPlugin implements Listener
                 }
                 case"run":
                 {
+                    if(args.length<2) 
+                    {
+                    	CSBZ(sender);
+                    	return true;
+                    }
                 	String[] temp1 = Arrays.copyOfRange(args, 2,args.length);
                 	String runCmd="";
                 	for(String temp2:temp1)
